@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h3, p {
+    margin: 0;
+}
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(90deg, hsla(341, 94%, 49%, 1) 0%, hsla(16, 90%, 77%, 1) 100%);
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap; /* Allow header items to wrap */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure header is on top */
+}
+
+.logo img {
+    max-height: 80px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Move menu to the right */
+    flex-wrap: wrap; /* Allow menu items to wrap on small screens */
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    color: #007bff;
+}
+
+.menu2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.searchbar {
+    display: flex;
+    margin-top: 10px; /* Add space between search bar and menu on small screens */
+}
+
+.search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 400px; /* Increase the width of the search bar */
+}
+
+.search-button {
+    padding: 6px 10px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* Allow main content to wrap */
+    padding: 50px;
+    justify-content: center; /* Center main content on small screens */
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px; /* Adjust the space between grid items */
+    width: 100%;
+}
+
+.grid_item {
+    background-color: blue;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjust height to fit content */
+    box-sizing: border-box;
+}
+
+.grid_item p {
+    overflow-wrap: break-word; /* Break long words to prevent overflow */
+    word-wrap: break-word; /* Compatibility for older browsers */
+}
+
+.item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10, .item-11, .item-12 {
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.icons {
+    padding: 10px;
+} 
+
+.imgs {
+    width: 100%;
+    height: auto; /* Adjust height to maintain aspect ratio */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.footer {
+    padding: 20px;
+    background: linear-gradient(90deg, hsla(341, 94%, 49%, 1) 0%, hsla(16, 90%, 77%, 1) 100%);
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-item {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-item:hover {
+    color: #007bff;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .grid_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .search-input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .menu {
+        margin-left: 0;
+        justify-content: center; /* Center menu on smaller screens */
+        flex-wrap: nowrap;
+    }
+    
+    .grid_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .search-input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .searchbar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-input {
+        width: 200px;
+    }
+    
+    .main {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu {
+        justify-content: center; /* Keep menu items horizontal */
+        width: 100%;
+    }
+
+    .grid_container {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-input {
+        width: 150px;
+    }
+    
+    .main {
+        padding: 10px;
+    }
+}
